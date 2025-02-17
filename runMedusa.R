@@ -72,7 +72,7 @@ if (parsed_args$mask == "hippocampus" | parsed_args$mask == "HC" | parsed_args$m
 } else if (parsed_args$mask == "200Parcel_7Network_V1_M1"){
 	mask <- "explore_clock_Schaefer2018_200Parcel_7Network_V1_M1"
 } else if (parsed_args$mask == 'Trust_hippocampus'){
-	mask_list <- c('trust-transformed-hc-l.nii.gz','trust-transformed-hc-r.nii.gz')
+	mask_list <- c('trust-transformed-hc-l','trust-transformed-hc-r')
 } else {
     mask <- paste0(parsed_args$sample, "_", parsed_args$mask)
 }
@@ -118,7 +118,13 @@ if (parsed_args$process == "deconvolution") {
                     print(subj)
                     print(run)
                     print(mask)
-                    system(paste("sbatch -p htc -N 1 --mem 20g -n 1 -t 23:00:00 -c 1 --wrap 'source ~/.bashrc; Rscript /ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/deconvolution.R --subj", subj, "--run", run, "--decon_outdir", decon_outdir, "--mask", mask, "--l1_nifti", nifti, "'"))
+                    setwd("/ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/logs4")
+                    file.create(file.path(getwd(), paste0(subj, "_", run, "_", mask, ".txt")))
+                    fileconn <- file.path(getwd(), paste0(subj, "_", run, "_", mask, ".txt"))
+                    writeLines(c("#!/bin/bash","#SBATCH --partition=htc","#SBATCH --nodes=1","#SBATCH --mem=30g","#SBATCH --ntasks=1","#SBATCH --time=1-00:00:00", "#SBATCH --cpus-per-task=1",paste("Rscript /ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/deconvolution.R", subj, run, nifti, decon_outdir, mask)), fileconn)
+                    print("Submitting job.")
+                    system(paste("sbatch", fileconn))
+                    #system(paste("sbatch -p htc -N 1 --mem 20g -n 1 -t 23:00:00 -c 1 --wrap 'source ~/.bashrc; Rscript /ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/deconvolution.R --subj", subj, "--run", run, "--decon_outdir", decon_outdir, "--mask", mask, "--l1_nifti", nifti, "'"))
                 } else {
                     print(paste("Subject", subj, "run", run, "is already deconvolved with", mask, "or there is no NIFTI for this run."))
                 }

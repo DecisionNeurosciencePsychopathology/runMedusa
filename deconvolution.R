@@ -1,5 +1,7 @@
 args <- commandArgs()
 
+print(args)
+
 subj <- args[6]
 l1_nifti <- args[8]
 run <- args[7]
@@ -12,7 +14,7 @@ mask <- args[10]
 #mask <- R.utils::cmdArg("mask")
 #overwrite <- R.utils::cmdArg("overwrite")
 
-l1_nifti <- file.path("/ix1/adombrovski/DNPL_DataMesh/Data/EXP/data_fmriprep/fmriprep", paste0("sub-", subj), "func", l1_nifti)
+l1_nifti <- file.path("/ix1/adombrovski/DNPL_DataMesh/Data/BSOC/data_fmriprep/fmriprep", paste0("sub-", subj), "func", l1_nifti)
 
 print(run)
 print(subj)
