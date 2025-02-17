@@ -1,0 +1,111 @@
+
+type = string-attribute
+name = HISTORY_NOTE
+count = 287
+'[bel52@login3.crc.pitt.edu: Fri Nov  8 14:43:53 2024] {AFNI_24.3.01:linux_centos_7_64} 3dresample -input Schaefer2018_400Parcels_17Networks_MNI152_Mask_A.nii.gz -master sub-206468_task-trust_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz -prefix bsocial_trust_brainmask.csv.gz~
+
+type = string-attribute
+name = TYPESTRING
+count = 15
+'3DIM_HEAD_ANAT~
+
+type = string-attribute
+name = IDCODE_STRING
+count = 27
+'XYZ_LrT_n9ZycasOo_pk4bICAQ~
+
+type = string-attribute
+name = IDCODE_DATE
+count = 25
+'Fri Nov  8 14:43:53 2024~
+
+type = integer-attribute
+name = SCENE_DATA
+count = 8
+ 2 11 0 -999 -999
+ -999 -999 -999
+
+type = string-attribute
+name = LABEL_1
+count = 5
+'zyxt~
+
+type = string-attribute
+name = LABEL_2
+count = 5
+'zyxt~
+
+type = string-attribute
+name = DATASET_NAME
+count = 5
+'zyxt~
+
+type = integer-attribute
+name = ORIENT_SPECIFIC
+count = 3
+ 1 2 4
+
+type  = float-attribute
+name  = ORIGIN
+count = 3
+           96.5          132.5          -78.5
+
+type  = float-attribute
+name  = DELTA
+count = 3
+         -3.125         -3.125            3.1
+
+type  = float-attribute
+name  = IJK_TO_DICOM
+count = 12
+         -3.125              0              0           96.5              0
+         -3.125              0          132.5              0              0
+            3.1          -78.5
+
+type  = float-attribute
+name  = IJK_TO_DICOM_REAL
+count = 12
+         -3.125              0              0           96.5              0
+         -3.125              0          132.5              0              0
+            3.1          -78.5
+
+type  = float-attribute
+name  = BRICK_STATS
+count = 2
+              0            390
+
+type = integer-attribute
+name = DATASET_RANK
+count = 8
+ 3 1 0 0 0
+ 0 0 0
+
+type = integer-attribute
+name = DATASET_DIMENSIONS
+count = 5
+ 63 74 63 0 0
+
+type = integer-attribute
+name = BRICK_TYPES
+count = 1
+ 3
+
+type  = float-attribute
+name  = BRICK_FLOAT_FACS
+count = 1
+              0
+
+type = string-attribute
+name = TEMPLATE_SPACE
+count = 5
+'ORIG~
+
+type = integer-attribute
+name = INT_CMAP
+count = 1
+ 0
+
+type = string-attribute
+name = BYTEORDER_STRING
+count = 10
+'LSB_FIRST~

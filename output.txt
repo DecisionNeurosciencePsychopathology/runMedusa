@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --partition=htc
+#SBATCH --nodes=1
+#SBATCH --mem=40g
+#SBATCH --ntasks=1
+#SBATCH --time=4-00:00:00
+#SBATCH --cpus-per-task=1
+Rscript /ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/deconvolution.R 203521 1 nfasm-sub-203521_task-trust_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz /ix1/adombrovski/DNPL_DataMesh/Data/bea_demo/runMedusa/medusaPreanalyzed/trust/bsocial bsocial_trust_brainmask
