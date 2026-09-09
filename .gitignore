@@ -1,0 +1,3 @@
+# Local source checkouts and installed R packages
+/dependencies/
+/R_library/
